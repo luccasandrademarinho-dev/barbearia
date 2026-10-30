@@ -1,0 +1,256 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 90px;
+}
+
+/* Fundo com a foto realista do barbeiro cortando cabelo */
+.hero-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=2000&q=85') center 28% / cover no-repeat;
+  filter: brightness(0.65) contrast(1.1);
+  z-index: 1;
+}
+
+/* Gradientes suaves nas bordas para integração com o restante da página */
+.hero-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(180deg, rgba(12, 13, 16, 0.4) 0%, rgba(12, 13, 16, 0.2) 50%, rgba(12, 13, 16, 0.95) 100%),
+    linear-gradient(90deg, rgba(12, 13, 16, 0.6) 0%, transparent 60%);
+  z-index: 2;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: calc(100vh - 190px);
+}
+
+/* Bloco Esquerdo */
+.hero-left {
+  max-width: 620px;
+}
+
+.hero-title-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2.75rem;
+}
+
+.hero-accent-line {
+  display: block;
+  width: 4px;
+  height: 140px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  padding-left: 1.75rem;
+}
+
+/* Bloco Direito: Card de Confiança / Avaliação */
+.hero-right {
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+  margin-bottom: 3rem;
+}
+
+.trust-card {
+  max-width: 320px;
+  padding: 1.5rem;
+  background: rgba(22, 24, 30, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+  animation: floatSubtle 6s ease-in-out infinite;
+}
+
+@keyframes floatSubtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.trust-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.trust-count {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.avatar-group {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #16181e;
+  object-fit: cover;
+  margin-left: -10px;
+}
+
+.avatar-img:first-child {
+  margin-left: 0;
+}
+
+.trust-description {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Indicador Circular de Scroll */
+.scroll-indicator-link {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.scroll-indicator-link:hover {
+  transform: translateX(-50%) scale(1.08);
+}
+
+.scroll-circle-badge {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-svg-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: spinSlow 14s linear infinite;
+}
+
+.scroll-svg-text text {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  fill: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+}
+
+.scroll-arrow {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+/* Responsividade Mobile e Tablet */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .hero-accent-line {
+    height: 105px;
+  }
+
+  .hero-right {
+    align-self: flex-start;
+    margin-bottom: 2rem;
+  }
+
+  .scroll-indicator-link {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.75rem;
+  }
+
+  .hero-accent-line {
+    height: 80px;
+    width: 3px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .trust-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}

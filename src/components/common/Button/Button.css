@@ -1,0 +1,128 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Tamanhos */
+.btn-sm {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+}
+
+.btn-md {
+  padding: 0.75rem 1.6rem;
+  font-size: 0.92rem;
+}
+
+.btn-lg {
+  padding: 0.85rem 1.85rem;
+  font-size: 0.98rem;
+}
+
+/* Ícone circular nos botões pill */
+.btn-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  transition: transform var(--transition-fast);
+}
+
+.btn:hover .btn-icon-wrapper {
+  transform: translate(2px, -2px);
+}
+
+/* ================= VARIANTES ================= */
+
+/* Botão Navbar: Branco com texto preto */
+.btn-primary {
+  background-color: #ffffff;
+  color: #0c0d10;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: #e5e7eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Botão Hero 1: Dark Pill com borda fina e círculo branco com seta */
+.btn-dark-pill {
+  background-color: rgba(18, 20, 24, 0.85);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+.btn-dark-pill .btn-icon-wrapper {
+  background-color: #ffffff;
+  color: #0c0d10;
+}
+
+.btn-dark-pill:hover {
+  background-color: #ffffff;
+  color: #0c0d10;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-dark-pill:hover .btn-icon-wrapper {
+  background-color: #0c0d10;
+  color: #ffffff;
+}
+
+/* Botão Hero 2: Outline Pill transparente com seta */
+.btn-outline-pill {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+}
+
+.btn-outline-pill .btn-icon-wrapper {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.btn-outline-pill:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Outline clássico */
+.btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline:hover {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Secondary */
+.btn-secondary {
+  background: var(--color-bg-surface);
+  color: #ffffff;
+  border-color: var(--color-glass-border);
+}
+
+.btn-secondary:hover {
+  background: #232630;
+  border-color: rgba(255, 255, 255, 0.3);
+}
